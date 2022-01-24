@@ -1,71 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>home</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
 	<script src="jquery-3.5.1.min.js"></script>
-	
-		
-		
-		 
-	<script language="javaScript">	
-			
-		
-			
-			var min, seg;		min = 1;		seg = 1		
-			function relogio(){			
-				if((min > 0) || (seg > 0)){				
-					if(seg == 0){					
-						seg = 59;					
-						min = min - 1	
-					}				
-					else{					
-						seg = seg - 1;				
-					}				
-					if(min.toString().length == 1){					
-						min = "0" + min;				
-					}				
-					if(seg.toString().length == 1){					
-						seg = "0" + seg;				
-					}				
-					document.getElementById('spanRelogio').innerHTML = min + ":" + seg;				
-					setTimeout('relogio()', 500);			
-				}			
-				else{				
-					document.getElementById('spanRelogio').innerHTML = "00:00";	
-					window.open("/sair")		
-				}		
-			}	
-			
-			$( "#botao" ).one( "click", function() {
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+		integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+		integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+		crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+
+
+
+	<script language="javaScript">
+
+
+
+		var min, seg; min = 1; seg = 1
+		function relogio() {
+			if ((min > 0) || (seg > 0)) {
+				if (seg == 0) {
+					seg = 59;
+					min = min - 1
+				}
+				else {
+					seg = seg - 1;
+				}
+				if (min.toString().length == 1) {
+					min = "0" + min;
+				}
+				if (seg.toString().length == 1) {
+					seg = "0" + seg;
+				}
+				document.getElementById('spanRelogio').innerHTML = min + ":" + seg;
+				setTimeout('relogio()', 500);
+			}
+			else {
+				document.getElementById('spanRelogio').innerHTML = "00:00";
+				window.open("/sair")
+			}
+		}
+
+		$("#botao").one("click", function () {
 
 			relogio()
 
-})
-			
-			
-		</script>	
-	
-	
+		})
+
+
+	</script>
+	<style>
+		#spanRelogio {
+			font-family: 'Orbitron', sans-serif;
+			color: white;
+			font-size: 60px;
+			text-align: center;
+		}
+
+		body{
+			background-color: rgb(8, 8, 8);
+		}
+	</style>
+
 </head>
+
 <body onLoad="relogio()">
-    
-   
-	
-	<span id="spanRelogio"></span>
-	
-	<div class="">
-		<a href="/adm/home">Estou trabalhando</a>
+	<div class="container">
+		<div class="row">
+			<div class="col"></div>
+			<div class="col" style="justify-content: center; align-items: center;">
+				<div style="margin-top: 150px;">
+					<div style="text-align: center;">
+						<span id="spanRelogio"></span>
+					</div>
+					
+					<div style="margin-top: 30px;">
+						<a href="/adm/home" class="btn btn-warning" style="width: 100%;">Estou trabalhando</a>
+					</div>
+				</div>
+
+			</div>
+			<div class="col"></div>
+		</div>
 	</div>
-	
-	
-	
+
+
+
+
+
+
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+	integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+	crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+	integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+	crossorigin="anonymous"></script>
 
 </html>
